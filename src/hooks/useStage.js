@@ -21,13 +21,18 @@ export const useStage = (player, resetPlayer) => {
                             `${player.collided ? 'merged' : 'clear'}`,
                         ]
                     }
-                })
-            })
+                });
+            });
+
+            // Then check if we collided
+            if (player.collided) {
+                resetPlayer();
+            }
             return newStage;
         }
 
         setStage(prev => updateStage(prev));
-    }, [player])
+    }, [player, resetPlayer])
 
     return [stage, setStage];
 }
