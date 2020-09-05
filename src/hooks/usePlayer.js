@@ -10,6 +10,7 @@ export const usePlayer = () => {
         collided: false
     });
 
+
     const rotate = (matrix, dir) => {
         // Make the rows to the columsn 
         const rotatedTetro = matrix.map((_, index) => matrix.map(col => col[index]), );
